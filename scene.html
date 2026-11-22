@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><style>
+  html, body { margin: 0; padding: 0; width: 1024px; height: 1024px; overflow: hidden; background: #1a0f08; }
+  svg { display: block; width: 1024px; height: 1024px; }
+</style></head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <radialGradient id="bg" cx="38%" cy="22%" r="90%">
+      <stop offset="0%" stop-color="#3d2612"/>
+      <stop offset="45%" stop-color="#2a1a0e"/>
+      <stop offset="100%" stop-color="#140c05"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f5a623" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#f5a623" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f5a623" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c98d4b"/>
+      <stop offset="35%" stop-color="#a06a2e"/>
+      <stop offset="70%" stop-color="#7c4f1e"/>
+      <stop offset="100%" stop-color="#5d3a14"/>
+    </linearGradient>
+    <linearGradient id="woodHead" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d9a55c"/>
+      <stop offset="30%" stop-color="#b57a35"/>
+      <stop offset="65%" stop-color="#8a5a22"/>
+      <stop offset="100%" stop-color="#6b4318"/>
+    </linearGradient>
+    <linearGradient id="honey" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b96f04"/>
+      <stop offset="28%" stop-color="#f5a623"/>
+      <stop offset="55%" stop-color="#ffc94d"/>
+      <stop offset="78%" stop-color="#e89b0c"/>
+      <stop offset="100%" stop-color="#a86403"/>
+    </linearGradient>
+    <linearGradient id="honeyVert" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd34d"/>
+      <stop offset="45%" stop-color="#f5a623"/>
+      <stop offset="100%" stop-color="#c97e05"/>
+    </linearGradient>
+    <radialGradient id="pool" cx="46%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#ffe08a"/>
+      <stop offset="35%" stop-color="#f7b733"/>
+      <stop offset="70%" stop-color="#d48806"/>
+      <stop offset="100%" stop-color="#8a5203"/>
+    </radialGradient>
+    <radialGradient id="drip" cx="42%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#ffe9a8"/>
+      <stop offset="40%" stop-color="#f7b733"/>
+      <stop offset="100%" stop-color="#c97e05"/>
+    </radialGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="soft2" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <filter id="bokeh" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <filter id="tiny" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <ellipse cx="430" cy="300" rx="560" ry="420" fill="url(#glow)"/>
+
+  <!-- honeycomb bokeh, faint, warm -->
+  <g filter="url(#bokeh)" opacity="0.55">
+    <circle cx="120" cy="140" r="46" fill="#f5a623" opacity="0.14"/>
+    <circle cx="880" cy="180" r="60" fill="#f5a623" opacity="0.12"/>
+    <circle cx="930" cy="520" r="38" fill="#ffc94d" opacity="0.14"/>
+    <circle cx="90" cy="620" r="52" fill="#f5a623" opacity="0.10"/>
+    <circle cx="860" cy="830" r="48" fill="#f5a623" opacity="0.10"/>
+    <circle cx="180" cy="900" r="34" fill="#ffc94d" opacity="0.12"/>
+    <circle cx="700" cy="90" r="30" fill="#ffc94d" opacity="0.12"/>
+  </g>
+  <g fill="none" stroke="#f5a623" stroke-width="3" opacity="0.10" filter="url(#bokeh)">
+    <polygon points="180,120 215,140 215,180 180,200 145,180 145,140"/>
+    <polygon points="850,300 885,320 885,360 850,380 815,360 815,320"/>
+    <polygon points="120,760 155,780 155,820 120,840 85,820 85,780"/>
+  </g>
+
+  <!-- soft shadow under dipper -->
+  <g transform="rotate(17 512 300)">
+    <rect x="150" y="330" width="640" height="26" rx="13" fill="#000000" opacity="0.35" filter="url(#soft)"/>
+  </g>
+
+  <!-- ===== wooden honey dipper, diagonal upper third ===== -->
+  <g transform="rotate(17 512 300)">
+    <!-- handle -->
+    <rect x="120" y="288" width="470" height="34" rx="17" fill="url(#wood)"/>
+    <rect x="120" y="292" width="470" height="9" rx="4.5" fill="#e8b878" opacity="0.55"/>
+    <rect x="120" y="312" width="470" height="7" rx="3.5" fill="#4a2c0e" opacity="0.45"/>
+    <!-- handle end knob -->
+    <circle cx="128" cy="305" r="21" fill="url(#woodHead)"/>
+    <ellipse cx="122" cy="298" rx="8" ry="5" fill="#f0c078" opacity="0.7"/>
+    <!-- grooved head: bulb with rings -->
+    <rect x="585" y="262" width="215" height="88" rx="44" fill="url(#woodHead)"/>
+    <rect x="585" y="268" width="215" height="16" rx="8" fill="#eab26a" opacity="0.5"/>
+    <!-- grooves -->
+    <g fill="#5d3a14" opacity="0.55">
+      <rect x="612" y="262" width="10" height="88" rx="5"/>
+      <rect x="652" y="262" width="10" height="88" rx="5"/>
+      <rect x="692" y="262" width="10" height="88" rx="5"/>
+      <rect x="732" y="262" width="10" height="88" rx="5"/>
+    </g>
+    <g fill="#f0c078" opacity="0.35">
+      <rect x="622" y="262" width="5" height="88" rx="2.5"/>
+      <rect x="662" y="262" width="5" height="88" rx="2.5"/>
+      <rect x="702" y="262" width="5" height="88" rx="2.5"/>
+      <rect x="742" y="262" width="5" height="88" rx="2.5"/>
+    </g>
+    <!-- honey coating over the head's LOWER half only: wood + grooves stay visible above -->
+    <path d="M 590 296 Q 640 314 690 304 Q 740 296 798 308 L 800 324 Q 782 348 722 350 Q 660 352 612 342 Q 588 330 590 296 Z"
+          fill="url(#honeyVert)" opacity="0.97"/>
+    <g fill="#5d3a14" opacity="0.30">
+      <rect x="612" y="296" width="10" height="54" rx="5"/>
+      <rect x="652" y="300" width="10" height="52" rx="5"/>
+      <rect x="692" y="298" width="10" height="54" rx="5"/>
+      <rect x="732" y="300" width="10" height="50" rx="5"/>
+    </g>
+    <ellipse cx="690" cy="322" rx="80" ry="8" fill="#fff3c4" opacity="0.55" filter="url(#tiny)"/>
+    <!-- honey dripping off the head's lower edge -->
+    <path d="M 640 348 Q 636 386 648 402 Q 660 386 656 348 Z" fill="url(#honeyVert)"/>
+    <path d="M 736 350 Q 732 372 742 384 Q 752 370 748 350 Z" fill="url(#honeyVert)"/>
+  </g>
+
+  <!-- ===== honey ribbon falling from the dipper to the pool ===== -->
+  <path d="M 668 396
+           C 700 470, 640 540, 668 610
+           C 690 668, 640 720, 656 780
+           C 664 822, 650 850, 646 872
+           L 612 872
+           C 616 836, 626 800, 620 756
+           C 612 700, 650 660, 632 600
+           C 616 546, 660 480, 634 396
+           Z"
+        fill="url(#honey)"/>
+  <!-- ribbon gloss highlight -->
+  <path d="M 652 420 C 672 490, 648 560, 660 630 C 668 690, 650 760, 646 850 L 632 850 C 638 760, 652 690, 644 624 C 634 556, 656 490, 640 420 Z"
+        fill="#fff6cf" opacity="0.75" filter="url(#tiny)"/>
+  <!-- thin secondary strand -->
+  <path d="M 700 402 C 716 470, 692 540, 706 600 C 716 652, 700 700, 706 740 C 710 790, 706 840, 702 872 L 688 872 C 692 830, 696 780, 690 740 C 684 690, 700 640, 690 600 C 682 540, 700 470, 688 402 Z"
+        fill="url(#honeyVert)" opacity="0.9"/>
+
+  <!-- ===== one large drip mid-fall ===== -->
+  <g>
+    <path d="M 560 560
+             C 560 520, 576 486, 592 452
+             C 596 442, 604 442, 608 452
+             C 624 486, 640 520, 640 560
+             C 640 606, 622 632, 600 632
+             C 578 632, 560 606, 560 560 Z"
+          fill="url(#drip)"/>
+    <ellipse cx="586" cy="540" rx="10" ry="26" fill="#fff8dc" opacity="0.9" filter="url(#tiny)"
+             transform="rotate(-12 586 540)"/>
+    <ellipse cx="612" cy="600" rx="14" ry="9" fill="#fff3c4" opacity="0.55" filter="url(#tiny)"/>
+  </g>
+  <!-- small satellite droplet -->
+  <g>
+    <circle cx="742" cy="660" r="13" fill="url(#drip)"/>
+    <ellipse cx="738" cy="655" rx="4" ry="6" fill="#fff8dc" opacity="0.85"/>
+  </g>
+
+  <!-- ===== honey pool at the bottom ===== -->
+  <ellipse cx="512" cy="918" rx="360" ry="86" fill="#000000" opacity="0.30" filter="url(#soft2)"/>
+  <ellipse cx="512" cy="906" rx="340" ry="78" fill="url(#pool)"/>
+  <ellipse cx="512" cy="896" rx="300" ry="58" fill="#f7b733" opacity="0.55"/>
+  <ellipse cx="470" cy="884" rx="150" ry="26" fill="#ffe08a" opacity="0.8" filter="url(#tiny)"/>
+  <ellipse cx="430" cy="880" rx="72" ry="12" fill="#fff6cf" opacity="0.9" filter="url(#tiny)"/>
+  <!-- ripple rings where the ribbon lands -->
+  <ellipse cx="632" cy="880" rx="86" ry="16" fill="none" stroke="#ffe08a" stroke-width="5" opacity="0.7"/>
+  <ellipse cx="632" cy="884" rx="128" ry="24" fill="none" stroke="#ffcf4d" stroke-width="4" opacity="0.45"/>
+  <ellipse cx="632" cy="888" rx="172" ry="32" fill="none" stroke="#f5a623" stroke-width="3" opacity="0.28"/>
+  <!-- ribbon meets pool: small mound -->
+  <path d="M 600 872 Q 632 830 664 872 Q 632 884 600 872 Z" fill="url(#honeyVert)"/>
+  <ellipse cx="632" cy="856" rx="16" ry="8" fill="#fff3c4" opacity="0.8" filter="url(#tiny)"/>
+
+  <!-- warm light wash top-left -->
+  <ellipse cx="300" cy="180" rx="420" ry="260" fill="#ffd34d" opacity="0.07" filter="url(#soft2)"/>
+</svg>
+</body>
+</html>
